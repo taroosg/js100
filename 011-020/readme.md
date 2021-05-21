@@ -70,7 +70,7 @@ function getMaxAndMin(s) {
 
 console.log(getMaxAndMin('9 12 3 6 10'));    // 12 3
 console.log(getMaxAndMin('1 1 2 2 3'));    // 3 1
-console.log(getMaxAndMin('5 9 -1 10 2'));    // 10 -3
+console.log(getMaxAndMin('5 9 -1 10 2'));    // 10 -1
 ```
 
 
