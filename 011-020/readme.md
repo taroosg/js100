@@ -129,7 +129,7 @@ function getNumberOfA(s) {
 
 }
 
-console.log(getNumberOfA('GSACADEMY'));    // 1
+console.log(getNumberOfA('GSACADEMY'));    // 2
 console.log(getNumberOfA('aAaAaA'));    // 3
 console.log(getNumberOfA('JavaScript'));    // 0
 ```
