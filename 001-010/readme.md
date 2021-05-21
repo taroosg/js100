@@ -13,22 +13,22 @@ console.log(compareNumbers(2, 2));    // eq
 
 
 ## 単位の計算
-距離`n`とその単位`s`が入力されるので，すべての距離を`mm`に換算し出力する`convertToMm()`関数を作成してください．
+距離`n`とその単位`s`が入力されるので，すべての距離を`mm`に換算し数値で出力する`convertToMm()`関数を作成してください．
 
 入力される距離の単位は km, m, cm の3種類で，それぞれ以下のように換算出来ます．
 
-- 1km = 1000m
-- 1m = 100cm
-- 1cm = 10mm
+- 1km = 1000 m
+- 1m = 100 cm
+- 1cm = 10 mm
 
 ```js
 function convertToMm(n，s) {
 
 }
 
-console.log((1, 'km'));    // 1000000
-console.log((54, 'km'));   // 54000000
-console.log((2, 'cm'));    // 20
+console.log(convertToMm(1, 'km'));    // 1000000
+console.log(convertToMm(54, 'km'));   // 54000000
+console.log(convertToMm(2, 'cm'));    // 20
 ```
 
 
@@ -118,7 +118,7 @@ function convertToUppercase(s) {
 
 }
 
-console.log(convertToUppercase('gsacademy'));    //
+console.log(convertToUppercase('gsacademy'));    // GSACADEMY
 console.log(convertToUppercase('abcdefghijklmnopqrstuvwxyz'));    // ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ```
 
