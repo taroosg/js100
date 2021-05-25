@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>011-020 - js100</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../js100/index.html"><strong aria-hidden="true">1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../js100/001-010.html"><strong aria-hidden="true">2.</strong> 001-010</a></li><li class="chapter-item expanded "><a href="../js100/011-020.html" class="active"><strong aria-hidden="true">3.</strong> 011-020</a></li><li class="chapter-item expanded "><a href="../js100/021-030.html"><strong aria-hidden="true">4.</strong> 021-030</a></li><li class="chapter-item expanded "><a href="../js100/031-040.html"><strong aria-hidden="true">5.</strong> 031-040</a></li><li class="chapter-item expanded "><a href="../js100/041-050.html"><strong aria-hidden="true">6.</strong> 041-050</a></li><li class="chapter-item expanded "><a href="../js100/051-060.html"><strong aria-hidden="true">7.</strong> 051-060</a></li><li class="chapter-item expanded "><a href="../js100/061-070.html"><strong aria-hidden="true">8.</strong> 061-070</a></li><li class="chapter-item expanded "><a href="../js100/071-080.html"><strong aria-hidden="true">9.</strong> 071-080</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">js100</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="カウントダウン"><a class="header" href="#カウントダウン">カウントダウン</a></h2>
+<p>正整数<code>n</code>が入力されるので，<code>n</code>から1まで1ずつカウントダウンする<code>countDown()</code>関数を作成してください．</p>
+<p>例えば</p>
+<p><code>3</code></p>
+<p>と入力された場合</p>
+<p><code>3 2 1</code></p>
+<p>と出力してください．</p>
+<pre><code class="language-js">function countDown(n) {
+
+}
+
+console.log(countDown(3));     // 3 2 1
+console.log(countDown(10));    // 10 9 8 7 6 5 4 3 2 1
+</code></pre>
+<h2 id="n文字目まで出力"><a class="header" href="#n文字目まで出力">N文字目まで出力</a></h2>
+<p>半角アルファベットで構成された文字列<code>s</code>と正の整数<code>n</code>入力されます．</p>
+<p>1文字目から<code>n</code>文字目までを出力する<code>getOneToN()</code>関数を作成してください．</p>
+<p>例えば</p>
+<p><code>abcdefg</code>と<code>4</code></p>
+<p>と入力された場合</p>
+<p><code>abcd</code></p>
+<p>と出力して下さい．</p>
+<pre><code class="language-js">function getOneToN(s, n) {
+
+}
+
+console.log(getOneToN('aabbccdd', 5));    // aabbc
+console.log(getOneToN('gsacademyfukuoka', 9));    // gsacademy
+</code></pre>
+<h2 id="最大と最小"><a class="header" href="#最大と最小">最大と最小</a></h2>
+<p>5個の数字 <code>n_1</code>, <code>n_2</code>, <code>n_3</code>, <code>n_4</code>, <code>n_5</code> が半角スペース区切りで与えられます．</p>
+<p>それらの数字の最大の数字，最小の数字を半角スペース区切りで出力する<code>getMaxAndMin()</code>関数を作成してください．</p>
+<p>例えば</p>
+<p><code>9 12 3 6 10</code></p>
+<p>と入力された場合</p>
+<p><code>12 3</code></p>
+<p>と出力してください．</p>
+<pre><code class="language-js">function getMaxAndMin(s) {
+
+}
+
+console.log(getMaxAndMin('9 12 3 6 10'));    // 12 3
+console.log(getMaxAndMin('1 1 2 2 3'));    // 3 1
+console.log(getMaxAndMin('5 9 -1 10 2'));    // 10 -1
+</code></pre>
+<h2 id="文字列からn番目"><a class="header" href="#文字列からn番目">文字列からN番目</a></h2>
+<p>半角アルファベット文字列<code>s</code>と整数<code>n</code>が入力されます．</p>
+<p>文字列<code>s</code>の1番左の文字を1文字目とし<code>n</code>文字目のアルファベットを出力する<code>getNthChar()</code>関数を定義してください．</p>
+<p>例えば</p>
+<p><code>gsacademy</code>と<code>3</code></p>
+<p>と入力された場合</p>
+<p><code>a</code></p>
+<p>と出力して下さい．</p>
+<pre><code class="language-js">function getNthChar(s, n) {
+
+}
+
+console.log(getNthChar('gsacademy', 3));    // a
+console.log(getNthChar('abcdefg', 5));    // e
+console.log(getNthChar('qwertyu', 1));    // q
+</code></pre>
+<h2 id="文字列の一致"><a class="header" href="#文字列の一致">文字列の一致</a></h2>
+<p>文字列<code>s</code>と文字列<code>t</code>が半角スペース区切りで入力されます．</p>
+<p><code>s</code>と<code>t</code>が完全一致していれば「Yes」，それ以外は「No」と出力する<code>isEqual()</code>関数を作成してください．</p>
+<pre><code class="language-js">function isEqual(s, t) {
+
+}
+
+console.log(isEqual('gsacademy', 'gsacademy'));    // Yes
+console.log(isEqual('JavaScript', 'ジャバスク'));    // No
+console.log(isEqual('aaaaa', 'aaaaaa'));    // No
+</code></pre>
+<h2 id="aの個数"><a class="header" href="#aの個数">Aの個数</a></h2>
+<p>半角アルファベットで構成された文字列<code>s</code>が与えられます．</p>
+<p><code>s</code>に含まれる半角アルファベット「A」の数を出力する<code>getNumberOfA()</code>関数を作成してください．</p>
+<pre><code class="language-js">function getNumberOfA(s) {
+
+}
+
+console.log(getNumberOfA('GSACADEMY'));    // 2
+console.log(getNumberOfA('aAaAaA'));    // 3
+console.log(getNumberOfA('JavaScript'));    // 0
+</code></pre>
+<h2 id="表面積の計算"><a class="header" href="#表面積の計算">表面積の計算</a></h2>
+<p>立方体の体積を求めましょう．</p>
+<p>一辺の長さ<code>a</code>が入力されるので，立方体の表面積を出力する<code>getSurfaceArea()</code>関数を作成してください．</p>
+<pre><code class="language-js">function getSurfaceArea(a) {
+
+}
+
+console.log(getSurfaceArea(4));    // 96
+console.log(getSurfaceArea(1));    // 6
+</code></pre>
+<h2 id="三角形の内角の和"><a class="header" href="#三角形の内角の和">三角形の内角の和</a></h2>
+<p>平面上の三角形の2つの角の角度<code>a</code>, <code>b</code>を入力し，残りの1つの角の角度を出力する<code>getAngle()</code>関数を作成してください．</p>
+<pre><code class="language-js">function getAngle(a, b) {
+
+}
+
+console.log(getAngle(30, 90));    // 60
+console.log(getAngle(45, 45));    // 90
+</code></pre>
+<h2 id="数字の出力"><a class="header" href="#数字の出力">数字の出力</a></h2>
+<p>ある正の整数<code>n</code>（最大2桁）が入力されます．</p>
+<p><code>n</code>を0埋め3桁で出力する<code>zeroPadding3()</code>関数を作成してください．</p>
+<p>例えば以下のような入力の場合</p>
+<p><code>98</code></p>
+<p>以下のように出力して下さい</p>
+<p><code>098</code></p>
+<pre><code class="language-js">function zeroPadding3(n) {
+
+}
+
+console.log(zeroPadding3(98));    // 098
+console.log(zeroPadding3(2));    // 002
+</code></pre>
+<h2 id="一週間の予定"><a class="header" href="#一週間の予定">一週間の予定</a></h2>
+<p>あなたは1週間を全て休みにするために有給を申請することにしました．もともと決まっている休みもあります．</p>
+<p>半角スペース区切りで7日間の休みが，休みならば「yes」，休みでなければ「no」と入力されます．</p>
+<p>有給申請しなくては行けない日数を出力する<code>getPaidHolidays()</code>関数を作成してください．</p>
+<pre><code class="language-js">function getPaidHolidays(s) {
+
+}
+
+console.log(getPaidHolidays('yes yes yes yes no no yes'));    // 2
+console.log(getPaidHolidays('yes no no no no no yes'));    // 5
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../js100/001-010.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../js100/021-030.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../js100/001-010.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../js100/021-030.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

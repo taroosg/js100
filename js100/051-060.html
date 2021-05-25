@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>051-060 - js100</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../js100/index.html"><strong aria-hidden="true">1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../js100/001-010.html"><strong aria-hidden="true">2.</strong> 001-010</a></li><li class="chapter-item expanded "><a href="../js100/011-020.html"><strong aria-hidden="true">3.</strong> 011-020</a></li><li class="chapter-item expanded "><a href="../js100/021-030.html"><strong aria-hidden="true">4.</strong> 021-030</a></li><li class="chapter-item expanded "><a href="../js100/031-040.html"><strong aria-hidden="true">5.</strong> 031-040</a></li><li class="chapter-item expanded "><a href="../js100/041-050.html"><strong aria-hidden="true">6.</strong> 041-050</a></li><li class="chapter-item expanded "><a href="../js100/051-060.html" class="active"><strong aria-hidden="true">7.</strong> 051-060</a></li><li class="chapter-item expanded "><a href="../js100/061-070.html"><strong aria-hidden="true">8.</strong> 061-070</a></li><li class="chapter-item expanded "><a href="../js100/071-080.html"><strong aria-hidden="true">9.</strong> 071-080</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">js100</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="プロフィールの表示"><a class="header" href="#プロフィールの表示">プロフィールの表示</a></h2>
+<p>人事局長のあなたは，毎年行われる新入社員の自己紹介が面倒なので自動化するシステムをつくることにしました．</p>
+<p>名前<code>name</code>，年齢<code>age</code>，性別<code>gender</code>が記載されたオブジェクトを入力すると，プロフィールを出力する<code>outputProfile()</code>関数を作成してください．</p>
+<p>プロフィールの形式は「彼/彼女の名前は<code>name</code>で<code>age</code>歳です」とします．彼/彼女はgenderによって区別されるものとします．</p>
+<p>3項目揃っていない場合は「情報がありません」と出力してください．</p>
+<pre><code class="language-js">function outputProfile(obj) {
+
+}
+const taro ={
+  name : 'Taro',
+  age : 25,
+  gender : 'male',
+};
+
+console.log(outputProfile(taro));    //彼の名前はTaroで25歳です
+
+const hanako = {
+  name : 'Hanako',
+  age : 30,
+  gender : 'female',
+};
+
+console.log(outputProfile(hanako));    // 彼女の名前はHanakoで30歳です
+
+const hatena = {
+  name: 'hatena',
+  age: 20,
+};
+
+console.log(outputProfile(hatena));   //  情報がありません
+</code></pre>
+<h2 id="お買い物リスト"><a class="header" href="#お買い物リスト">お買い物リスト</a></h2>
+<p>配列でつくられた買い物リストがあります．</p>
+<p>買い物に出かけようとしたタイミングで新たにリストに追加しましたが，バグで別の配列に入ってしまいました．</p>
+<p>二つの配列を合わせた新しい配列を出力する<code>combineArray()</code>関数を作成してください．</p>
+<pre><code class="language-js">function combineArray(a, b) {
+
+}
+
+const abc = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];
+const def = [&quot;d&quot;, &quot;e&quot;, &quot;f&quot;];
+
+console.log(combineArray(abc, def));    //[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]
+
+const gen = [&quot;米&quot;, &quot;トイレットペーパー&quot;, &quot;ちゅーる&quot;, &quot;酒&quot;];
+const yui = [&quot;洗剤&quot;, &quot;肉&quot;, &quot;ブロッコリー&quot;];
+
+console.log(combineArray(gen, yui));    // [&quot;米&quot;, &quot;トイレットペーパー&quot;, &quot;ちゅーる&quot;, &quot;酒&quot;, &quot;洗剤&quot;, &quot;肉&quot;, &quot;ブロッコリー&quot;]
+</code></pre>
+<h2 id="成績を晒す"><a class="header" href="#成績を晒す">成績を晒す</a></h2>
+<p>あなたが勤務する学校で小テストを行いました．成績の悪い生徒を晒したく，テストのスコアが悪い順に出力するプログラムを作成しましょう．</p>
+<p>テストの点数は半角スペース区切りで入力されるため，点数が低い順に半角スペース区切りで出力する<code>createBadScoreArray()</code>関数を作成してください．</p>
+<pre><code class="language-js">function createBadScoreArray(a) {
+
+}
+
+console.log(createBadScoreArray('15 8 9 100 26 1'));    // 1 8 9 15 26 100
+
+console.log(createBadScoreArray('50 15 89 5 61 2 44'));    // 2 5 15 44 50 61 89
+</code></pre>
+<h2 id="特定の文字列を含むか"><a class="header" href="#特定の文字列を含むか">特定の文字列を含むか</a></h2>
+<p>文字列の中に，特定の文字列が含まれているかの判定を出力する<code>containStrings()</code>関数を作成してください．</p>
+<p>含まれている場合は「<code>true</code>」含まれていない場合は「<code>false</code>」と出力することとします．</p>
+<pre><code class="language-js">function containStrings(str1, str2) {
+
+}
+
+const a = &quot;あけましておめでとうございます&quot;;
+const b = &quot;おめでとう&quot;;
+
+console.log(containStrings(a, b));    // true
+
+const c = &quot;Love the life you live. Live the life you love.&quot;;
+const d = &quot;best&quot;;
+
+console.log(containStrings(c, d));    // false
+</code></pre>
+<h2 id="アンケートデータの作成"><a class="header" href="#アンケートデータの作成">アンケートデータの作成</a></h2>
+<p>名前と年齢を入力するアンケートを作成しました．回答データを扱いやすくするため，一つのオブジェクトにまとめたデータを作成したいと考えました．</p>
+<p>入力データ（名前と年齢）からこれら2つ（<code>name</code>, <code>age</code>）をキーとしたオブジェクトを出力する<code>createObject()</code>関数を作成してください．</p>
+<pre><code class="language-js">function createObject(a, b) {
+
+}
+
+console.log(createObject('ichiro', 20));    // { name: &quot;ichiro&quot;, age: 20, }
+console.log(createObject('momoko', 22));    // { name: &quot;momoko&quot;, age: 22, }
+</code></pre>
+<h2 id="ランダムに挨拶"><a class="header" href="#ランダムに挨拶">ランダムに挨拶</a></h2>
+<p>プロジェクトのチャットツールで挨拶をすることになりました．</p>
+<p>いろいろな国や地域から参加者がいるため，時差などを考慮した挨拶を考えるのが面倒なのでランダムに出力してお茶を濁すことにしました．</p>
+<p>予め決めた挨拶を入力すると，ランダムに一つの挨拶を出力する<code>randomGreet()</code>関数を作成してください．</p>
+<pre><code class="language-js">function randomGreet(a, b, c) {
+
+}
+console.log(randomGreet('おはよう','こんにちは','こんばんは'));   // おはようorこんにちはorこんばんは
+console.log(randomGreet('Hi!','Hello!','Bye!'));   // Hi! or Hello! or Bye!
+</code></pre>
+<h2 id="オブジェクトの並び替え"><a class="header" href="#オブジェクトの並び替え">オブジェクトの並び替え</a></h2>
+<p>膨大な顧客データの中から，条件に当てはまる顧客のリストをつくっています．</p>
+<p>リストは並び順が適当なので，管理番号が若い順に並び替えたリストに直しましょう．</p>
+<p>管理番号<code>id</code>，名前<code>name</code>，年齢<code>age</code>を定義するオブジェクトobjを入力すると，<code>id</code>の順番で並び替えたメンバーの一覧を出力する<code>sortObject()</code>関数を作成してください．一人のデータは<code>id:name(age)</code>形式となるようにし，<code>,</code>で区切った文字列にすること．</p>
+<pre><code class="language-js">function sortObject(obj) {
+
+}
+
+const objectArray1 = [
+  {
+    id: 8,
+    name: &quot;Emily&quot;,
+    age: 29,
+  },
+  {
+    id: 1,
+    name: &quot;John&quot;,
+    age: 22,
+  },
+  {
+    id: 4,
+    name: &quot;Bob&quot;,
+    age: 30,
+  },
+];
+
+console.log(sortObject(objectArray1));   // 1:John(22),4:Bob(30),8:Emily(29)
+
+const objectArray2 = [
+  {
+    id: 10,
+    name: &quot;taro&quot;,
+    age: 29,
+  },
+  {
+    id: 112,
+    name: &quot;hanako&quot;,
+    age: 22,
+  },
+  {
+    id: 40,
+    name: &quot;pochi&quot;,
+    age: 3,
+  },
+];
+
+console.log(sortObject(objectArray2));    // 10:taro(29),40:pochi(3),112:hanako(22)
+</code></pre>
+<h2 id="名前しかいらん"><a class="header" href="#名前しかいらん">名前しかいらん</a></h2>
+<p>顧客リストを作成する仕事を任されました．完成させて上司に提出したところ，「名前しかいらん」と言われました．</p>
+<p>これまでに作成した顧客リストを活用したいので，これらのデータから名前だけを抽出しましょう．</p>
+<p>管理番号<code>id</code>，名前<code>name</code>，年齢<code>age</code>，を定義するオブジェクトを入力して，名前のみの配列を出力する<code>createNameArray()</code>関数を作成してください．</p>
+<pre><code class="language-js">function createNameArray(array) {
+
+}
+
+const objectArray3 = [
+  {
+    id: 8,
+    name: &quot;Emily&quot;,
+    age: 29,
+  },
+  {
+    id: 1,
+    name: &quot;John&quot;,
+    age: 22,
+  },
+  {
+    id: 4,
+    name: &quot;Bob&quot;,
+    age: 30,
+  },
+];
+
+console.log(createNameArray(objectArray3));   // [&quot;John&quot;, &quot;Emily&quot;, &quot;Bob&quot;]
+
+const objectArray4 = [
+  {
+    id: 10,
+    name: &quot;taro&quot;,
+    age: 29,
+  },
+  {
+    id: 112,
+    name: &quot;hanako&quot;,
+    age: 22,
+  },
+  {
+    id: 40,
+    name: &quot;pochi&quot;,
+    age: 3,
+  },
+];
+console.log(createNameArray(objectArray4));   // [&quot;pochi&quot;, &quot;hanako&quot;, &quot;taro&quot;]
+</code></pre>
+<h2 id="メール一斉送信"><a class="header" href="#メール一斉送信">メール一斉送信</a></h2>
+<p>顧客リストの中から，25歳以下のメンバーにメールの一斉送信を行う仕事を任されました．</p>
+<p>管理番号<code>id</code>，名前<code>name</code>，年齢<code>age</code>を定義するオブジェクトを引数として，25歳未満のメンバーの<code>id</code>が入った配列を出力する<code>filterUnder25Array()</code>関数を作成してください．</p>
+<pre><code class="language-js">function filterUnder25Array(array) {
+
+}
+
+const objectArray5 = [
+  {
+    id: 8,
+    name: &quot;Emily&quot;,
+    age: 29,
+  },
+  {
+    id: 1,
+    name: &quot;John&quot;,
+    age: 22,
+  },
+  {
+    id: 4,
+    name: &quot;Bob&quot;,
+    age: 30,
+  },
+];
+
+console.log(filterUnder25Array(objectArray5));   // [1]
+
+const objectArray6 = [
+  {
+    id: 10,
+    name: &quot;taro&quot;,
+    age: 29,
+  },
+  {
+    id: 112,
+    name: &quot;hanako&quot;,
+    age: 22,
+  },
+  {
+    id: 40,
+    name: &quot;pochi&quot;,
+    age: 3,
+  },
+];
+
+console.log(filterUnder25Array(objectArray6));   // [112, 40]
+</code></pre>
+<h2 id="予算オーバー"><a class="header" href="#予算オーバー">予算オーバー</a></h2>
+<p>ECサイトで買い物をした商品がカートに入っています．このサイトはバグを抱えており，合計金額がユーザに表示されません．</p>
+<p>カートの中身から合計金額を算出し，今回の予算<code>¥114514</code>に収まるかどうかを判断しましょう．</p>
+<p>カート内の情報を入力すると商品の価格<code>price</code>合計が予算に収まるかどうかを<code>true</code>または<code>false</code>で出力する<code>canTakeThis()</code>関数を作成してください．</p>
+<p>カートには商品が複数入る場合（<code>count</code>の値）がある点に注意しましょう．</p>
+<pre><code class="language-js">function canTakeThis(arr) {
+
+}
+const tarosCart = [
+  {
+    id: 8,
+    name: &quot;Yoich&quot;,
+    price: 5800,
+    count: 2,
+  },
+  {
+    id: 1,
+    name: &quot;Yamasaki30&quot;,
+    price: 3000000,
+    count: 1,
+  },
+  {
+    id: 4,
+    name: &quot;Chita&quot;,
+    price: 3600,
+    count: 1,
+  },
+];
+
+console.log(canTakeThis(tarosCart));    // false
+
+const hanakosCart = [
+  {
+    id: 10,
+    name: &quot;ひまわり&quot;,
+    price: 280,
+    count: 3,
+  },
+  {
+    id: 112,
+    name: &quot;かすみ草&quot;,
+    price: 220,
+    count: 2,
+  },
+  {
+    id: 40,
+    name: &quot;ガーベラ&quot;,
+    price: 110,
+    count: 5,
+  },
+];
+console.log(canTakeThis(hanakosCart));    // true
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../js100/041-050.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../js100/061-070.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../js100/041-050.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../js100/061-070.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
