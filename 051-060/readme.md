@@ -13,25 +13,25 @@ function outputProfile(obj) {
 
 }
 const taro ={
-  name : Taro,
+  name : 'Taro',
   age : 25,
-  gender : male
-}
+  gender : 'male',
+};
 
 console.log(outputProfile(taro));    //彼の名前はTaroで25歳です
 
 const hanako = {
-  name : Hanako,
+  name : 'Hanako',
   age : 30,
-  gender : female
-}
+  gender : 'female',
+};
 
 console.log(outputProfile(hanako));    // 彼女の名前はHanakoで30歳です
 
 const hatena = {
-        name: "hatena",
-        age: 20,
-      };
+  name: 'hatena',
+  age: 20,
+};
 
 console.log(outputProfile(hatena));   //  情報がありません
 ```
@@ -74,8 +74,6 @@ function createBadScoreArray(a) {
 }
 
 console.log(createBadScoreArray('15 8 9 100 26 1'));    // 1 8 9 15 26 100
-
-const array2 = [50, 15, 89, 5, 61, 2, 44];
 
 console.log(createBadScoreArray('50 15 89 5 61 2 44'));    // 2 5 15 44 50 61 89
 ```
