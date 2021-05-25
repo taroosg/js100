@@ -47,3 +47,4 @@ console.log(calculateArea(10, 10));   // 100
 
 上記の要領で回答を作成しよう( ` ･ω･)b
 
+
